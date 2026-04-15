@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Colors (Olive/Organic Theme) -->
+    <color name="primary">#5A5A40</color>
+    <color name="onPrimary">#FFFFFF</color>
+    <color name="primaryContainer">#DDE6C7</color>
+    <color name="onPrimaryContainer">#181D00</color>
+
+    <!-- Secondary Colors -->
+    <color name="secondary">#5D6050</color>
+    <color name="onSecondary">#FFFFFF</color>
+    <color name="secondaryContainer">#E2E5D1</color>
+    <color name="onSecondaryContainer">#1A1D11</color>
+
+    <!-- Background and Surface -->
+    <color name="background">#FDFCF4</color>
+    <color name="onBackground">#1B1C17</color>
+    <color name="surface">#FDFCF4</color>
+    <color name="onSurface">#1B1C17</color>
+    <color name="surfaceVariant">#E4E4D9</color>
+    <color name="onSurfaceVariant">#46483C</color>
+    
+    <color name="outline">#77786B</color>
+</resources>

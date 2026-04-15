@@ -1,0 +1,6 @@
+{
+  "name": "LexiLearn Android",
+  "description": "Android application for learning foreign vocabulary based on news and spaced repetition (SM-2).",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
