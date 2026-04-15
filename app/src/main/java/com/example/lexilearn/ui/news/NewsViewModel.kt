@@ -5,14 +5,11 @@ import androidx.lifecycle.viewModelScope
 import com.example.lexilearn.data.entities.NewsArticle
 import com.example.lexilearn.data.entities.VocabularyWord
 import com.example.lexilearn.data.local.VocabularyDao
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class NewsViewModel @Inject constructor(
+class NewsViewModel(
     private val vocabularyDao: VocabularyDao
 ) : ViewModel() {
 

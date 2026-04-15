@@ -6,24 +6,24 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import com.example.lexilearn.BaseApplication
 import com.example.lexilearn.R
 import com.example.lexilearn.databinding.BottomSheetTranslationBinding
 import com.example.lexilearn.databinding.FragmentNewsBinding
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
-@AndroidEntryPoint
 class NewsFragment : Fragment() {
 
     private var _binding: FragmentNewsBinding? = null
     private val binding get() = _binding!!
 
-    private val viewModel: NewsViewModel by viewModels()
+    private lateinit var viewModel: NewsViewModel
     private lateinit var adapter: NewsAdapter
 
     override fun onCreateView(
@@ -32,6 +32,15 @@ class NewsFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentNewsBinding.inflate(inflater, container, false)
+        
+        val database = (requireActivity().application as BaseApplication).database
+        val factory = object : ViewModelProvider.Factory {
+            override fun <T : ViewModel> create(modelClass: Class<T>): T {
+                return NewsViewModel(database.vocabularyDao()) as T
+            }
+        }
+        viewModel = ViewModelProvider(this, factory)[NewsViewModel::class.java]
+        
         return binding.root
     }
 
